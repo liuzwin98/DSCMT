@@ -1,7 +1,5 @@
 ## Dual-Stream Cross-Modality Fusion Transformer for RGB-D Action Recognition
 
-Source code will be available upon acceptance
-
 [comment]: <> (This repo holds the code for the work on *Knowledge-Based System* )
 
 [comment]: <> ([[Paper]]&#40;url&#41;)
