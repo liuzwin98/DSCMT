@@ -4,6 +4,7 @@
 
 [comment]: <> ([[Paper]]&#40;url&#41;)
 
+The paper is accepted by the *Knowledge-Based System (KBS)*, and the link will be given after the paper is published.
 
 # Usage Guide
 
