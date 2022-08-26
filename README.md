@@ -1,10 +1,6 @@
 ## Dual-Stream Cross-Modality Fusion Transformer for RGB-D Action Recognition
 
-[comment]: <> (This repo holds the code for the work on *Knowledge-Based System* )
-
-[comment]: <> ([[Paper]]&#40;url&#41;)
-
-The paper is accepted by the *Knowledge-Based System (KBS)*, and the link will be given after the paper is published.
+This repo holds the code for the work on *Knowledge-Based System* [[Paper](https://doi.org/10.1016/j.knosys.2022.109741)]
 
 # Usage Guide
 
@@ -61,6 +57,20 @@ python test_models.py ntu120 Motion path_of_ntu120_sub_rp_test_list.txt \
   --test_segments 1 --gpus 3 
 ```
 
+## Citation
+If this repository is helpful for your research, we'd really appreciate it if you could cite the following paper:
+
+```
+@article{liu2022dscmt,
+  title = {Dual-stream cross-modality fusion transformer for RGB-D action recognition},
+  author = {Zhen, Liu and Jun, Cheng and Libo, Liu and Ziliang, Ren and Qieshi, Zhang and Chengqun, Song},
+  journal = {Knowledge-Based Systems},
+  pages = {109741},
+  year = {2022},
+  issn = {0950-7051},
+  doi = {https://doi.org/10.1016/j.knosys.2022.109741},
+}
+```
 
 ## Acknowledgements
 We thank [@yjxiong][yjxiong] for sharing TSN-Pytorch codebase.
