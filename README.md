@@ -63,7 +63,7 @@ If this repository is helpful for your research, we'd really appreciate it if yo
 ```
 @article{liu2022dscmt,
   title = {Dual-stream cross-modality fusion transformer for RGB-D action recognition},
-  author = {Zhen, Liu and Jun, Cheng and Libo, Liu and Ziliang, Ren and Qieshi, Zhang and Chengqun, Song},
+  author = {Liu, Zhen and Cheng, Jun and Liu, Libo and Ren, Ziliang and Zhang, Qieshi and Song, Chengqun},
   journal = {Knowledge-Based Systems},
   pages = {109741},
   year = {2022},
