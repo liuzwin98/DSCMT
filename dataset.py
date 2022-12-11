@@ -46,6 +46,12 @@ class TSNDataSet(data.Dataset):
 
     def _load_image(self, directory, idx):
         if self.modality == 'Appearance':
+            """
+            Raw RGB-D images and dynamic images are in different directories on my server, and my 
+            train.txt records dynamic images' paths.
+            So when training with RGB&depth raw images, I change the data path to 
+            find the corresponding action samples, e.g, S001C001P001R001A004 of NTU RGB+D 120
+            """
             video_file = directory.split('/')[-1]
 
             rgb_path = '/home/liulb/liuz/ntu_rgb_frames/' + video_file
@@ -60,12 +66,6 @@ class TSNDataSet(data.Dataset):
             img1 = Image.open(os.path.join(directory, 'vdi_{:03d}.jpg'.format(idx))).convert('RGB')
             img2 = Image.open(os.path.join(directory, 'ddi_{:03d}.jpg'.format(idx))).convert('RGB')
             return [img1, img2]
-        elif self.modality == 'RGB':
-            directory2 = directory.split('/')
-            directory2[2] = 'cq'
-            directory2[3] = 'ntu_rgb_frames'
-            directory2 = '/'.join(directory2)
-            return [Image.open(os.path.join(directory2, 'img_{:05d}.jpg'.format(idx))).convert('RGB')]
         elif self.modality == 'Flow':
             x_img = Image.open(os.path.join(directory, self.image_tmpl.format('x', idx))).convert('L')
             y_img = Image.open(os.path.join(directory, self.image_tmpl.format('y', idx))).convert('L')
