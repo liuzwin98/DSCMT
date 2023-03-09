@@ -257,8 +257,8 @@ class FusionNet(nn.Module):
         img_feat1 = img_feat1.flatten(2).permute(0, 2, 1).contiguous()  # b f c
         img_feat2 = img_feat2.flatten(2).permute(0, 2, 1).contiguous()
 
-        feat1 = feat1 + self.pos_rgb(img_feat1)
-        feat2 = feat2 + self.pos_depth(img_feat2)
+        feat1 = img_feat1 + self.pos_rgb(img_feat1)
+        feat2 = img_feat2 + self.pos_depth(img_feat2)
 
         for ca in self.ca_list:
             feat1 = self.sa1(feat1)
