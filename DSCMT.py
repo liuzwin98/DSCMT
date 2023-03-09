@@ -253,12 +253,12 @@ class FusionNet(nn.Module):
         img_feat1 = self.bn1(img_feat1)
         img_feat2 = self.bn2(img_feat2)
 
-        # (L, N, E),where L is the target sequence length, N is the batch size, E is the embedding dimension.
+        # (N, L, E),where L is the target sequence length, N is the batch size, E is the embedding dimension.
         img_feat1 = img_feat1.flatten(2).permute(0, 2, 1).contiguous()  # b f c
         img_feat2 = img_feat2.flatten(2).permute(0, 2, 1).contiguous()
 
-        feat1 = self.pos_rgb(img_feat1)
-        feat2 = self.pos_depth(img_feat2)
+        feat1 = feat1 + self.pos_rgb(img_feat1)
+        feat2 = feat2 + self.pos_depth(img_feat2)
 
         for ca in self.ca_list:
             feat1 = self.sa1(feat1)
@@ -508,7 +508,7 @@ class TSN(nn.Module):
                 if len(ps) == 2:
                     fusion_bais.append(ps[1])
 
-        # TODO 可修改fusionmodel学习率的倍率
+        
         return [
             {'params': first_conv_weight, 'lr_mult': 5 if self.modality == 'Flow' else 1, 'decay_mult': 1,
              'name': "first_conv_weight"},
